@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#00216E</color>
+    <color name="colorPrimaryDark">#00216E</color>
+
+    <color name="black">#000000</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="white">#ffffff</color>
+    <color name="gray_dark">#E2808080</color>
+    <color name="button_start_end_color">#B99040</color>
+    <color name="button_middle_color">#F3E894</color>
+    <color name="home_bg">#FFF0F0F0</color>
+
+    <color name="red_transparent">#99CE0049</color>
+    <color name="rating_color">#FF9E00</color>
+    <color name="blue">#4B18A8</color>
+    <color name="page_bg">#F0F0F0</color>
+    <color name="red">#EE0B0B</color>
+    <color name="green">#7ECF1F</color>
+
+
+
+    <color name="switchTrack">#ffd600</color>
+    <color name="switchTrackDisable">#90caf9</color>
+    <color name="switchTrackActive">#1565c0</color>
+    <color name="switchTrackNormal">#90caf9</color>
+    <color name="switchThumbBgActive">#1b5e20</color>
+    <color name="switchThumbActive">#ad1457</color>
+    <color name="switchThumbkNormal">#64b5f6</color>
+
+    <color name="colorSliderBackground">#FF181821</color>
+    <color name="colorTextColor">#FFFFFFFF</color>
+    <color name="colorSwitchColor">#FF2371FA</color>
+</resources>

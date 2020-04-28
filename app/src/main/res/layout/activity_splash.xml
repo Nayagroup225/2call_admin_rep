@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="#ffffff"
+    tools:context=".SplashActivity">
+
+    <ImageView
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_main3"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:scaleType="centerInside"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+</RelativeLayout>

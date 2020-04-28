@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">천하통신-발신</string>
+    <string name="no_found" >There is not any result.</string>
+    <string name="loading" >Please wait a moment.</string>
+</resources>
