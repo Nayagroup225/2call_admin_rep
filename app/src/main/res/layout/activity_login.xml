@@ -46,12 +46,10 @@
 
             <EditText
                 android:id="@+id/et_user_name"
-                android:hint="User ID"
+                android:hint="User Name"
                 android:background="@android:color/transparent"
                 android:textSize="14sp"
                 android:layout_marginLeft="5dp"
-                android:textColor="@color/black"
-                android:text=""
                 android:inputType="textEmailAddress"
                 android:layout_width="match_parent"
                 android:layout_height="45dp" />
@@ -83,8 +81,6 @@
                 android:textSize="14sp"
                 android:background="@android:color/transparent"
                 android:layout_marginLeft="5dp"
-                android:textColor="@color/black"
-                android:text=""
                 android:inputType="textPassword"
                 android:layout_width="match_parent"
                 android:layout_height="45dp" />

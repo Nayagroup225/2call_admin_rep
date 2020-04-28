@@ -1,5 +1,8 @@
 <resources>
-    <string name="app_name">천하통신-발신</string>
-    <string name="no_found" >There is not any result.</string>
-    <string name="loading" >Please wait a moment.</string>
+    <string name="app_name">천하통신-수신</string>
+    <string name="turn_speaker_on">Speaker ON</string>
+    <string name="callee">client identity or phone number</string>
+    <string name="answer">Answer</string>
+    <string name="decline">Decline</string>
+    <string name="callHint">Dial a client name or phone number. Leaving the field empty results in an automated response.</string>
 </resources>
