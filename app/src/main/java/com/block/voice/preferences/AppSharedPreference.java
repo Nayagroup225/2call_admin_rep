@@ -35,4 +35,26 @@ public class AppSharedPreference {
     public void setDeviceToken(String deviceToken) {
         preferences.edit().putString("deviceToken", deviceToken).apply();
     }
+
+    public boolean getAccountRemeberd (){
+        return preferences.getBoolean("is_remembered", false);
+    }
+
+    public void setAccount(String id, String password){
+        preferences.edit().putBoolean("is_remembered", true).apply();
+        preferences.edit().putString("id", id).apply();
+        preferences.edit().putString("password", password).apply();
+    }
+
+    public String getAccountId(){
+        return preferences.getString("id", "");
+    }
+
+    public String getAccountPassword(){
+        return preferences.getString("password", "");
+    }
+
+    public void deleteAccount(){
+        preferences.edit().putBoolean("is_remembered", false).apply();
+    }
 }

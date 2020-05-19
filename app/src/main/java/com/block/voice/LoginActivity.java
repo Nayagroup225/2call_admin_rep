@@ -11,6 +11,7 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -37,6 +38,7 @@ public class LoginActivity extends AppCompatActivity implements IApiCallback<Bas
 
     EditText mUserNameEt, mPasswordEt;
     Button mLoginBtn;
+    CheckBox mRememberPassword;
     String imei = "";
     TelephonyManager telephonyManager;
 
@@ -47,6 +49,7 @@ public class LoginActivity extends AppCompatActivity implements IApiCallback<Bas
         getNotificationInstanceId();
         mUserNameEt = findViewById(R.id.et_user_name);
         mPasswordEt = findViewById(R.id.et_password);
+        mRememberPassword = findViewById(R.id.checkbox_remember_password);
         mLoginBtn = findViewById(R.id.btn_login);
         mLoginBtn.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -65,6 +68,10 @@ public class LoginActivity extends AppCompatActivity implements IApiCallback<Bas
             }
         }else{
             imei = telephonyManager.getDeviceId();
+        }
+
+        if(AppSharedPreference.getInstance(this).getAccountRemeberd()){
+            setUserInfoFromRemember(AppSharedPreference.getInstance(this).getAccountId(), AppSharedPreference.getInstance(this).getAccountPassword());
         }
     }
 
@@ -159,6 +166,12 @@ public class LoginActivity extends AppCompatActivity implements IApiCallback<Bas
         ApiCall.getInstance().adminLogin(userName, password, VoiceActivity.identity, AppSharedPreference.getInstance(LoginActivity.this).getDeviceToken(), imei,  this);
     }
 
+    protected void setUserInfoFromRemember(String userName, String password){
+        mUserNameEt.setText(userName);
+        mPasswordEt.setText(password);
+        mRememberPassword.setChecked(true);
+    }
+
     private void getNotificationInstanceId() {
         FirebaseInstanceId.getInstance().getInstanceId()
                 .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
@@ -188,6 +201,11 @@ public class LoginActivity extends AppCompatActivity implements IApiCallback<Bas
             Response<BaseResponse> res = response;
             if (res.isSuccessful()) {
                 if (res.body().getErrorCode().equals("0")) {
+                    if(mRememberPassword.isChecked()){
+                        AppSharedPreference.getInstance(LoginActivity.this).setAccount(mUserNameEt.getText().toString(), mPasswordEt.getText().toString());
+                    }else{
+                        AppSharedPreference.getInstance(LoginActivity.this).deleteAccount();
+                    }
                     Intent intent = new Intent(this, VoiceActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
